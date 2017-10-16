@@ -36,16 +36,21 @@ table {
   .arrow {
     color: #fff;
     float: right;
+    cursor: pointer;
   }
+
   .brand, .id {
     width: 100px;
   }
+
   .description {
     width: 150px;
   }
+
   .title {
     width: 300px;
   }
+  
   .count, .price {
     width: 100px;
     text-align: right;

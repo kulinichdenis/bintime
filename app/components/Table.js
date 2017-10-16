@@ -32,7 +32,8 @@ class Table extends Component {
           <tr>
             { 
               columns.map((column, index) => 
-              (<th key={index.toString()}>{column.toUpperCase()} {
+              (<th key={index.toString()}>{column.toUpperCase()}
+              {
                 sortBy &&
                 sortBy === column &&
                 <span className="arrow" onClick={this.sorting}>{ sort === 'asc' ? '▾' : '▴' }</span>
@@ -51,10 +52,10 @@ class Table extends Component {
         </tbody>
         { summary && summary.length > 0 &&
           (<tfoot>
-            <tr>
+            <tr className="summary">
               { columns.map((column, index) => { 
                 if (summary.some(element => element === column )) {
-                  return (<td key={'ft' + index.toString()}>
+                  return (<td className={column} key={'ft' + index.toString()}>
                     { pipe(
                       map(item => item[column]),
                       reduce((sum, price) => sum + price, 0),
